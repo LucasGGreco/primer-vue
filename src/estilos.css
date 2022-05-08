@@ -1,0 +1,28 @@
+body {
+    background-color: #DBC5B4;
+}
+
+.card {
+    background-color: #F9E9D9;
+
+}
+
+.btn-outline-primary {
+    background-color: #7574B3 !important;
+    border-color: #7574B3 !important;
+    color: aliceblue !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4b4a7e !important;
+    border-color: #49497c !important;
+    color: aliceblue !important;
+}
+
+.card-usuarios {
+    font-size: 13px;
+}
+
+.card-usuarios h5 {
+    color: #575786;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto VUE de Greco</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/estilos.css">
+  </head>
+  <body>
+
+    <div class="container" id="app">
+
+      <div class="alert alert-danger position-absolute px-5 border border-secondary" role="alert" v-if="error">
+        Usuario no encontrado
+      </div>
+
+      <div class="row justify-content-around mt-5">
+
+        <div class="col-3 text-center" >
+          <div class="card card-usuarios" v-if="resultado">
+            <img v-bind:src="resultado.avatar_url" class="card-img-top rounded-circle p-3" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{resultado.name}}</h5>
+              <p class="card-text text-start">{{resultado.bio}}</p>
+              <a v-bind:href="resultado.html_url" target="_blank">Ir a su GitHub -></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mb-3">
+
+          <div class="card border border-secondary text-center ">
+            <div class="card-body m-3">
+              <h5 class="card-title mb-3">Busca usuarios de GitHub:</h5>
+              
+              <form v-on:submit.prevent="doSearch">
+                <div class="mb-4">
+                  <input v-model="search" type="text" class="w-100" required placeholder="User">
+                </div>
+                <input type="submit" class="btn btn-outline-primary" value="Buscar">
+              </form>
+           
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 text-center">
+          hola
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="/src/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script>
+      const mountedApp = app.mount("#app")
+    </script>
+  </body>
+</html>
